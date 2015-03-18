@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Elgentos_Mailcheck>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Customer />
+            </depends>
+        </Elgentos_Mailcheck>
+    </modules>
+</config>

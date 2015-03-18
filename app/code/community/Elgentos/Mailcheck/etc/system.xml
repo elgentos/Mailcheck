@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<config>
+    <sections>
+        <customer translate="label" module="customer">
+            <groups>
+                <mailcheck translate="label">
+                    <label>Mailcheck</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>50</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <default_domains translate="label">
+                            <label>Default domains</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_domains>
+                        <default_secondlevel_domains>
+                            <label>Default second level domains</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_secondlevel_domains>
+                        <default_toplevel_domains>
+                            <label>Default top level domains</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </default_toplevel_domains>
+                        <supplement_domains translate="label">
+                            <label>Supplement domains from registered customer</label>
+                            <comment>Fetch the most occurring domains from the registered customers list</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </supplement_domains>
+                        <supplement_cutoff_point>
+                            <label>Supplement cutoff point</label>
+                            <comment>Needs at least X occurrences to be used as a supplement domains -- it is adviced to set this to a high enough number to avoid privacy concerns</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </supplement_cutoff_point>
+                        <text>
+                            <label>Did you mean .... text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </text>
+                    </fields>
+                </mailcheck>
+            </groups>
+        </customer>
+    </sections>
+</config>

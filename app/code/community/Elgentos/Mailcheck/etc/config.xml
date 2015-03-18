@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Elgentos_Mailcheck>
+            <version>0.1.0</version>
+        </Elgentos_Mailcheck>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <elgentos_mailcheck>
+                    <file>elgentos_mailcheck.xml</file>
+                </elgentos_mailcheck>
+            </updates>
+        </layout>
+        <routers>
+            <elgentos_mailcheck>
+                <use>standard</use>
+                <args>
+                    <module>Elgentos_Mailcheck</module>
+                    <frontName>mailcheck</frontName>
+                </args>
+            </elgentos_mailcheck>
+        </routers>
+    </frontend>
+    <adminhtml>
+        <events>
+            <admin_system_config_changed_section_customer>
+                <observers>
+                    <rebuild_mailcheck_domain_list_on_config_save>
+                        <type>model</type>
+                        <class>Elgentos_Mailcheck_Model_Observer</class>
+                        <method>generateDomainList</method>
+                    </rebuild_mailcheck_domain_list_on_config_save>
+                </observers>
+            </admin_system_config_changed_section_customer>
+            <controller_action_postdispatch_adminhtml_cache_massRefresh>
+                <observers>
+                    <rebuild_mailcheck_domain_list_on_cache_refresh>
+                        <type>model</type>
+                        <class>Elgentos_Mailcheck_Model_Observer</class>
+                        <method>generateDomainList</method>
+                    </rebuild_mailcheck_domain_list_on_cache_refresh>
+                </observers>
+            </controller_action_postdispatch_adminhtml_cache_massRefresh>
+        </events>
+    </adminhtml>
+    <global>
+        <models>
+            <elgentos_mailcheck>
+                <class>Elgentos_Mailcheck_Model</class>
+            </elgentos_mailcheck>
+        </models>
+        <helpers>
+            <elgentos_mailcheck>
+                <class>Elgentos_Mailcheck_Helper</class>
+            </elgentos_mailcheck>
+        </helpers>
+    </global>
+    <default>
+        <customer>
+            <mailcheck>
+                <default_domains>google.com
+gmail.com
+me.com
+aol.com
+mac.com
+comcast.net
+googlemail.com
+msn.com
+facebook.com
+verizon.net
+sbcglobal.net
+att.net
+gmx.com
+icloud.com
+                </default_domains>
+                <default_secondlevel_domains>yahoo
+hotmail
+mail
+gmail
+live
+outlook
+gmx
+                </default_secondlevel_domains>
+                <default_toplevel_domains>co.jp
+co.uk
+com
+net
+org
+info
+edu
+gov
+mil
+ca
+nl
+de
+fr
+                </default_toplevel_domains>
+                <supplement_domains>1</supplement_domains>
+                <supplement_cutoff_point>50</supplement_cutoff_point>
+                <text>Did you mean</text>
+            </mailcheck>
+        </customer>
+    </default>
+</config>

@@ -54,7 +54,9 @@ class Elgentos_Mailcheck_Model_Observer
         $tlds = array_merge($tlds, $defaultTopLevelDomains);
         $tlds = array_unique($tlds);
         // Reverse domain list to put least used in front
-        $fullDomains = array_reverse($fullDomains);
+	$fullDomains = array_reverse($fullDomains);
+	$tlds = array_reverse($tlds);
+	$secondLevelDomains = array_reverse($secondLevelDomains)
 
         // Write output to cache
         file_put_contents($this->_helper->getTopLevelDomainCacheFilename(), Mage::helper('core')->jsonEncode($tlds));

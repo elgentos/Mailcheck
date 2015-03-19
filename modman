@@ -1,0 +1,5 @@
+app/code/community/Elgentos/Mailcheck/ app/code/community/Elgentos/Mailcheck/
+app/design/frontend/base/default/layout/elgentos_mailcheck.xml app/design/frontend/base/default/layout/elgentos_mailcheck.xml
+app/etc/modules/Elgentos_Mailcheck.xml app/etc/modules/Elgentos_Mailcheck.xml
+js/mailcheck/ js/mailcheck/
+skin/frontend/base/default/js/mailcheck/ skin/frontend/base/default/js/mailcheck/

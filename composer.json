@@ -1,0 +1,12 @@
+{
+    "name": "elgentos/mailcheck",
+    "description": "It checks the users input in the email field for common typo mistakes in the domain part.",
+    "type": "magento-module",
+    "authors": [
+        {
+            "name": "peterjaap",
+            "email": "peterjaap@elgentos.nl"
+        }
+    ],
+    "require": {}
+}

@@ -5,13 +5,18 @@ There are a number of default domains such as gmail.com and hotmail.com. The ext
 
 Configuration can be found under System > Configuration > Customer > Customer Configuration > Mailcheck.
 
-The configuration settings are fetched through an AJAX call on the customer account login page. They are cached in the /var folder in JSON files. These files are (re-)generated upon cache clearing and saving of the customer section of the Magento configuration. 
+The configuration settings are fetched through an AJAX call on the customer account login page. They are cached in the /var folder in JSON files. These files are (re-)generated upon cache clearing and saving of the customer section of the Magento configuration.
 
 ## Screenshot
 ![screenshot 2015-03-18 16 26 09](https://cloud.githubusercontent.com/assets/431360/6712189/909c1ca4-cd8b-11e4-8eac-9162ce4c3553.png)
 
 ## Configurable settings screenshot
 ![screenshot 2015-03-18 16 27 53](https://cloud.githubusercontent.com/assets/431360/6712231/c39aab98-cd8b-11e4-9dc1-d195fa851917.png)
+
+## Changelog
+### v0.2.0 - 27-09-2015
+Fixed a few bugs where some vars weren't named correctly.
+Added an option to warn a user about using a disposable domain. Uses the disposable domain list from [FGRibreau / mailchecker](https://github.com/FGRibreau/mailchecker).
 
 ## Judge report
 ```

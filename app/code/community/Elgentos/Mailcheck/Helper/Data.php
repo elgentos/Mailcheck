@@ -30,6 +30,15 @@ class Elgentos_Mailcheck_Helper_Data extends Mage_Core_Helper_Abstract
         return $domains;
     }
 
+    public function getDefaultDisposableDomains()
+    {
+        $domains = $this->getConfig('disposable_domains');
+        $domains = explode(PHP_EOL, $domains);
+        $domains = array_map('trim', $domains);
+
+        return $domains;
+    }
+
     public function getSupplement()
     {
         return $this->getConfig('supplement_domains');
@@ -48,6 +57,11 @@ class Elgentos_Mailcheck_Helper_Data extends Mage_Core_Helper_Abstract
     public function getText()
     {
         return $this->getConfig('text');
+    }
+
+    public function getNotAllowedText()
+    {
+        return $this->getConfig('not_allowed_text');
     }
 
     public function getDomains()
@@ -83,6 +97,15 @@ class Elgentos_Mailcheck_Helper_Data extends Mage_Core_Helper_Abstract
         }
     }
 
+    public function getDisposableDomains()
+    {
+        if($this->getConfig('warn_disposable_domains')) {
+            return $this->getDefaultDisposableDomains();
+        } else {
+            return false;
+        }
+    }
+
     private function getConfig($key)
     {
         return Mage::getStoreConfig('customer/mailcheck/' . $key, Mage::app()->getStore()->getId());
@@ -102,6 +125,5 @@ class Elgentos_Mailcheck_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return Mage::getBaseDir('var') . '/mailcheck_secondleveldomains.json';
     }
-
 
 }

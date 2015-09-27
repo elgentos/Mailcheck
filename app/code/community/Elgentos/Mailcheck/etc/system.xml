@@ -53,6 +53,9 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
+                            <depends>
+                                <supplement_domains>1</supplement_domains>
+                            </depends>
                         </supplement_cutoff_point>
                         <text>
                             <label>Did you mean .... text</label>
@@ -62,6 +65,38 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </text>
+                        <warn_disposable_domains translate="label">
+                            <label>Give a warning when a disposable domain is entered</label>
+                            <comment>Disposable (anti-spam) domains are often used for creating disposable accounts. Enabling this feature encourages the customer to use a real e-mail address.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </warn_disposable_domains>
+                        <disposable_domains>
+                            <label>Disposable domains</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <warn_disposable_domains>1</warn_disposable_domains>
+                            </depends>
+                        </disposable_domains>
+                        <not_allowed_text>
+                            <label>Warning message for the customer when using a disposable domain</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>90</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <warn_disposable_domains>1</warn_disposable_domains>
+                            </depends>
+                        </not_allowed_text>
                     </fields>
                 </mailcheck>
             </groups>

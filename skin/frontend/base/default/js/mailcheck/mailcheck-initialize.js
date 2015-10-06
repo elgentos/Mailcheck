@@ -4,7 +4,7 @@ jQuery(window).ready(function () {
         jQuery.ajax({
             'async': false,
             'global': false,
-            'url': "/mailcheck/fetch/settings",
+            'url': BASE_URL + "mailcheck/fetch/settings",
             'dataType': "json",
             'success': function (data) {
                 json = data;
